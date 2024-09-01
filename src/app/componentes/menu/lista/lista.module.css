@@ -4,9 +4,10 @@
     left: 0;
     background-color: bisque;
     padding: 10px;
-    width: 30%;
+    width: 50%;
     height: 100vh;
     padding-top: 60px;
+    z-index: 1000;
 }
 
 .container ul {
