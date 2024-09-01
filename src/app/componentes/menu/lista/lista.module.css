@@ -1,0 +1,35 @@
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: bisque;
+    padding: 10px;
+    width: 30%;
+    height: 100vh;
+    padding-top: 60px;
+}
+
+.container ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 60px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.container li {
+    list-style: none;
+}
+
+.nav {
+    text-decoration: none;
+    color: black; 
+    font-size: 18px; 
+}
+
+.nav:hover {
+    color: #b49738; /* Muda a cor do link ao passar o mouse */
+}

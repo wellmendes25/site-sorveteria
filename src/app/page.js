@@ -5,11 +5,13 @@ import ImagemSabores from '../../public/banner-sabores.jpg'
 import ImagemEventos from '../../public/eventos-image.jpg';
 import ImagemSobre from '../../public/sobre-image.jpg'
 
+
 export default function Home() {
   return (
     <main id="Home" className={estilos.main}>
+  
       <div className={estilos.container_main}>
-        <Image src={BannerHome} alt="imagem sorvete"></Image>
+        <Image className={estilos.imagem_sorvete_float} src={BannerHome} alt="imagem sorvete"></Image>
         <h1>Sorvete artesanal</h1>
       </div>
       <section className={estilos.second_container}>
