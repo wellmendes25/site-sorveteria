@@ -1,3 +1,5 @@
+'use client'
+import { useState } from "react";
 import Image from "next/image";
 import estilos from "./page.module.css";
 import BannerHome from '../../public/banner-home.png';
@@ -7,6 +9,7 @@ import ImagemSobre from '../../public/sobre-image.jpg'
 
 
 export default function Home() {
+  
   return (
     <main id="Home" className={estilos.main}>
   
