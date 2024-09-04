@@ -1,57 +1,45 @@
 import Image from "next/image";
-import estilos from './sabor.module.css'
-import BannerSabores from '../../../../public/banner-sabores.jpg'
+import estilos from './sabor.module.css';
+import BannerSabores from '../../../../public/banner-sabores.jpg';
 import imagem1 from '../../../../public/sabor-oreo.png';
 import imagem2 from '../../../../public/sabor-pistache.png';
 import imagem3 from '../../../../public/sabor-cookies-avela.png';
 import imagem4 from '../../../../public/sorbet-kiwi.png';
 import imagem5 from '../../../../public/sorbet-morango.png';
 import imagem6 from '../../../../public/sorbet-limao.png';
-export default function Sabores(){
-    return(
+import Sorvete from './Sorvete';
+
+export default function Sabores() {
+    const sabores = [
+        { imagem: imagem1, titulo: "Sorvete de Oreo", descricao: "Delicioso sorvete sabor Oreo. Uma explosão de sabor." },
+        { imagem: imagem2, titulo: "Sorvete de Pistache", descricao: "Sorvete cremoso sabor pistache, rico em sabor e textura." },
+        { imagem: imagem3, titulo: "Sorvete de Cookies e Avelã", descricao: "Combinação perfeita de cookies crocantes com avelã." },
+        { imagem: imagem4, titulo: "Sorbet de Kiwi", descricao: "Refrescante e saudável, o sorbet de kiwi é perfeito para o verão." },
+        { imagem: imagem5, titulo: "Sorbet de Morango", descricao: "Feito com morangos frescos, esse sorbet é irresistível." },
+        { imagem: imagem6, titulo: "Sorbet de Limão", descricao: "O sorbet de limão é azedinho na medida certa, refrescante e saboroso." },
+    ];
+
+    return (
         <main>
-        <section className={estilos.container_main}>
-            <Image className={estilos.imagem_sabores} src={BannerSabores}></Image>
-            <h1>NOSSOS SABORES</h1>
-               
-        </section>
+            <section className={estilos.container_main}>
+                <Image className={estilos.imagem_sabores} src={BannerSabores} alt="Banner Sabores" />
+                <h1>NOSSOS SABORES</h1>
+            </section>
 
-        <section className={estilos.second_section}>
-            <div><h2>sabores de sorvete</h2></div>
+            <section className={estilos.second_section}>
+                <div><h2>Sabores de Sorvete</h2></div>
 
-            <div className={estilos.container_sorvetes}>
-                <div className={estilos.sorvete}>
-                    <Image className={estilos.imagem_sorvete} src={imagem1}></Image>
-                    <h6>Sorvete de Oreo</h6>
-                    <p>Delicioso sorvete sabor Oreo. Uma explosão de sabor.</p>
+                <div className={estilos.container_sorvetes}>
+                    {sabores.map((sabor, index) => (
+                        <Sorvete
+                            key={index}
+                            imagem={sabor.imagem}
+                            titulo={sabor.titulo}
+                            descricao={sabor.descricao}
+                        />
+                    ))}
                 </div>
-                <div className={estilos.sorvete}>
-                <Image className={estilos.imagem_sorvete} src={imagem2}></Image>
-                    <h6>Sorvete de Oreo</h6>
-                    <p>Delicioso sorvete sabor Oreo. Uma explosão de sabor.</p>
-                </div>
-                <div className={estilos.sorvete}>
-                <Image className={estilos.imagem_sorvete} src={imagem3}></Image>
-                    <h6>Sorvete de Oreo</h6>
-                    <p>Delicioso sorvete sabor Oreo. Uma explosão de sabor.</p>
-                </div>
-                <div className={estilos.sorvete}>
-                <Image className={estilos.imagem_sorvete} src={imagem4}></Image>
-                    <h6>Sorvete de Oreo</h6>
-                    <p>Delicioso sorvete sabor Oreo. Uma explosão de sabor.</p>
-                </div>
-                <div className={estilos.sorvete}>
-                <Image className={estilos.imagem_sorvete} src={imagem5}></Image>
-                    <h6>Sorvete de Oreo</h6>
-                    <p>Delicioso sorvete sabor Oreo. Uma explosão de sabor.</p>
-                </div>
-                <div className={estilos.sorvete}>
-                <Image className={estilos.imagem_sorvete} src={imagem6}></Image>
-                    <h6>Sorvete de Oreo</h6>
-                    <p>Delicioso sorvete sabor Oreo. Uma explosão de sabor.</p>
-                </div>
-            </div>
-        </section>
+            </section>
         </main>
-    )
+    );
 }
